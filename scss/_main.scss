@@ -1,0 +1,142 @@
+/*
+Theme Name: Kreative
+Theme URI: https://www.orbitthemes.com
+Author: Sandeep Prasad Bhatt
+Author URI: http://www.sandeepbhatt.com.np
+Description: Kreative - Business Landing Page Template
+Create date: April 24, 2018
+Version: 1.0
+License: Commercial, All rights reserved - orbitthemes.com
+Tags: Responsive Bootstrap 4 template , bootstrap 4 business template, bootstrap4 template, landing page template
+Text Domain: orbitthemes.com
+*/
+
+#main {
+    background: $white;
+    .carousel-inner {
+        .carousel-item {
+            &::after {
+                content: "";
+                background: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+            img {
+                max-height: 560px;
+                min-width: 100%;
+            }
+            .carousel-caption {
+                h1 {
+                    strong {
+                        color: $green;
+                    }
+                }
+            }
+        }
+    }
+    #showcase-gallery {
+        .row {
+            .showcase-text {
+                display: flex;
+                align-items: center;
+                flex-flow: column;
+                justify-content: center;
+            }
+        }
+    }
+    #team {
+        .image-flip {
+            &:hover {
+                .front-side {
+                    @include transformProperty(rotateY(180deg));
+                }
+                .back-side {
+                    @include transformProperty(rotateY(0deg));
+                    border-radius: 0.25rem;
+                }
+            }
+            .main-flip {
+                @include transitionProperty(1s);
+                -webkit-transform-style: preserve-3d;
+                -moz-transform: perspective(1000px);
+                -moz-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                position: relative;
+            }
+            .front-side {
+                position: relative;
+                -webkit-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                z-index: 2;
+                margin-bottom: 30px;
+                .card-body {
+                    img {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .back-side {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: $white;
+                -webkit-transform: rotateY(-180deg);
+                -moz-transform: rotateY(-180deg);
+                -o-transform: rotateY(-180deg);
+                -ms-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+                -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+                -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+                box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+                .card {
+                    ul {
+                        &.list-inline {
+                            li {
+                                a {
+                                    color: $cyan !important;
+                                    padding: 5px;
+                                    border: 1px solid $cyan;
+                                    border-radius: 50%;
+                                    i {
+                                        min-width: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .front-side,
+            .back-side {
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -ms-backface-visibility: hidden;
+                backface-visibility: hidden;
+                @include transitionProperty(1s);
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -o-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                .card {
+                    min-height: 352px;
+                    a {
+                        color: $cyan;
+                    }
+                    .card-title {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+    }
+    .subscribe{
+        background: url('../img/slide-2.jpeg') 50% 50%;
+    }
+}
